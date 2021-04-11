@@ -1,0 +1,36 @@
+<html>
+  <body>
+   <form action="" method="post">
+   	{%csrf_token%}
+   	<table border="0" align="center" cellpadding="10" cellspacing="10">
+   		<thead>
+   			<tr>
+   				<th>Employee Name</th>
+   				<th>Salary</th>
+   				<th>Designation</th>
+   				<th>Action</th>
+   			</tr>
+   		</thead>
+   		<tbody>
+   			{% for e in record %}
+
+   		<tr>
+   			<td>{{e.ename}}</td>
+   			<td>{{e.salary}}</td>
+   			<td>{{e.design}}</td>
+   			<td>
+   				<a href="/edit/{{e.id}}">Edit</a>
+   				<a href="/delete/{{e.id}}">Delete</a>
+
+   			</td>
+
+   		</tr>
+   		    {% endfor %}
+   		</tbody>
+
+
+   	</table>
+
+    </form>
+  </body>
+</html>
